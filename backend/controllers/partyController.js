@@ -27,14 +27,23 @@ const partyController = {
                 res.status(406).json({ msg: "O seu orçamento é insuficiente!" });
                 return;
             }
-            
+
             const response = await PartyModel.create(party);
 
             res.status(201).json({ response, msg: "Festa criada com sucesso!" });
         } catch (error) {
             console.log(error)
         }
-    }
+    },
+    getAll: async (req, res) => {
+        try {
+            const parties = await PartyModel.find();
+
+            res.json(parties);
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 
 module.exports = partyController;
