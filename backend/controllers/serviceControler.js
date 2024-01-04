@@ -19,6 +19,19 @@ const serviceController = {
         } catch (error) {
             console.log(`ERROR:${error}`)
         }
+    },
+
+    getAll: async (req, res) => {
+
+        try {
+            const services = await ServiceModel.find()
+
+            res.json(services)
+
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 };
 

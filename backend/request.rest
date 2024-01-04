@@ -2,8 +2,12 @@ POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-    "name":"Alguma serviço",
-    "description":"Alguma descrição",
-    "price":1400,
+    "name":"Alguma serviço 3",
+    "description":"Alguma descrição 3",
+    "price":1404,
     "image":"https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=400"
 }
+
+###
+
+GET http://localhost:3000/api/services
