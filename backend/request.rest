@@ -18,3 +18,13 @@ GET http://localhost:3000/api/services/6596e7236c3c75d5bb63f594
 ###
 DELETE http://localhost:3000/api/services/6596e390dcca273d3afb1a50
 
+###
+put http://localhost:3000/api/services/6596e477d13d6704e0
+Content-Type: application/json
+
+{
+    "name":"Seriço 1",
+    "description":"Criar conteudo",
+    "price":1500,
+    "image":"https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=400"
+}
