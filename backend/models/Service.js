@@ -8,7 +8,7 @@ const serviceSchema = new Schema({
         type: String,
         required: true
     },
-    descrição: {
+    description: {
         type: String,
         required: true
     },
@@ -21,12 +21,12 @@ const serviceSchema = new Schema({
         required: true
     },
 },
-   { timestamps: true }
+    { timestamps: true }
 );
 
-const Service =mongoose.model("Service",serviceSchema);
+const Service = mongoose.model("Service", serviceSchema);
 
-module.exports={
+module.exports = {
     Service,
     serviceSchema,
 };
