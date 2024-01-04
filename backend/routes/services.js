@@ -14,10 +14,11 @@ router
 
 router
     .route("/services/:id")
-    .put((req, res) => serviceController.update(req, res))
+    .delete((req, res) => serviceController.put(req, res))
+
 
 router
     .route("/services/:id")
-    .delete((req, res) => serviceController.put(req, res))
+    .put((req, res) => serviceController.update(req, res))
 
 module.exports = router;
