@@ -19,7 +19,7 @@ GET http://localhost:3000/api/services/6596e7236c3c75d5bb63f594
 DELETE http://localhost:3000/api/services/6596e390dcca273d3afb1a50
 
 ###
-put http://localhost:3000/api/services/6596e477d13d6704e0
+put http://localhost:3000/api/services/6596e477d13d6704
 Content-Type: application/json
 
 {
