@@ -17,7 +17,7 @@ const partySchema = new Schema({
         type: String,
         required: true
     },
-    budeget: {
+    budget: {
         type: Number,
         required: true
     },

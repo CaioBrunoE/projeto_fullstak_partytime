@@ -28,3 +28,31 @@ Content-Type: application/json
     "price":1500,
     "image":"https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=400"
 }
+
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title":"Formatura",
+    "author":"Maicom",
+    "description":"Uma festa de formatura",
+    "budget":5000,
+    "image":"https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "services":[
+        {
+            
+            "name":"Alguma serviço 1",
+            "description":"Alguma descrição 3",
+            "price":3000,
+            "image":"https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=400"
+        },
+        {
+            
+            "name":"Alguma serviço 2",
+            "description":"Alguma descrição 3",
+            "price":3000,
+            "image":"https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&w=400"
+        }
+    ]
+}
