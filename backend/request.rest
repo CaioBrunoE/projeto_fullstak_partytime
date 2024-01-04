@@ -13,6 +13,8 @@ Content-Type: application/json
 GET http://localhost:3000/api/services
 
 ###
+GET http://localhost:3000/api/services/6596e7236c3c75d5bb63f594
 
-GET http://localhost:3000/api/services/6596e72c3c75d5bb63f594
+###
+DELETE http://localhost:3000/api/services/6596e390dcca273d3afb1a50
 
