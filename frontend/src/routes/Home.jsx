@@ -1,4 +1,4 @@
-import partFetch from "../axios/config"
+import partyFetch from "../axios/config"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "./Home.css"
@@ -9,7 +9,7 @@ const Home = () => {
     //Load Partyes
     useEffect(() => {
         const loadParties = async () => {
-            const res = await partFetch.get("/parties")
+            const res = await partyFetch.get("/parties")
             console.log(res.data)
             setParties(res.data)
         }

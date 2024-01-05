@@ -1,8 +1,10 @@
-import partFetch from "../axios/config"
+import partyFetch from "../axios/config"
 
 import { useState, useEffect } from "react"
 
 import { useNavigate } from "react-router-dom"
+
+import useToast from "../hook/useToast"
 
 import "./Form.css"
 
@@ -11,18 +13,18 @@ const CreateParty = () => {
 
   const [title, setTitle] = useState("")
   const [author, setAuthor] = useState("")
-  const [decription, setDescription] = useState("")
+  const [description, setDescription] = useState("")
   const [budget, setBudget] = useState(0)
   const [image, setImage] = useState("")
   const [partyServices, setPartyServices] = useState([])
+
+  const navigate = useNavigate()
 
 
   //Load Services
   useEffect(() => {
     const loadServices = async () => {
-      const res = await partFetch.get("/services")
-
-      console.log(res)
+      const res = await partyFetch.get("/services")
 
       setServices(res.data)
     }
@@ -36,33 +38,42 @@ const CreateParty = () => {
 
     const filteredService = services.filter((s) => s._id === value);
 
-    console.log(partyServices);
 
     if (checked) {
       setPartyServices((services) => [...services, filteredService[0]]);
     } else {
       setPartyServices((services) => services.filter((s) => s._id !== value));
     }
-
-    console.log(partyServices);
     
   };
   
   // Create anew party
-  const createParty = (e) => {
-    e.preventDefault()
+  const createParty = async (e) => {
+    e.preventDefault();
 
-    const party = {
-      title,
-      author,
-      decription,
-      budget,
-      image,
-      services: partyServices,
+    try {
+      const party = {
+        title,
+        author,
+        description,
+        budget,
+        image,
+        services: partyServices,
+      };
+
+      const res = await partyFetch.post("/parties", party);
+
+      console.log(res.status);
+
+      if (res.status === 201) {
+        navigate("/");
+
+        useToast(res.data.msg);
+      }
+    } catch (err) {
+      useToast(err.response.data.msg, "error");
     }
-    console.log(party)
-  }
-
+    };
 
   return (
     <div className="form-page">
@@ -87,7 +98,7 @@ const CreateParty = () => {
           <span>Descrição:</span>
           <textarea placeholder="Conte mais sobre a festa..." required
             onChange={(e) => setDescription(e.target.value)}
-            value={decription}
+            value={description}
           />
         </label>
         <label>
@@ -131,4 +142,4 @@ const CreateParty = () => {
   )
 }
 
-export default CreateParty
+export default CreateParty;

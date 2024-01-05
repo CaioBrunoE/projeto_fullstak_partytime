@@ -59,7 +59,7 @@ const partyController = {
             console.log(error);
         }
     },
-    delete: async (req, res) => {
+    delete: async (req, res) => { 
         try {
             const id = req.params.id;
             const party = await PartyModel.findById(id);
