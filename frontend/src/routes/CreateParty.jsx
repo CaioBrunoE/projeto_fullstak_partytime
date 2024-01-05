@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 
 import { useNavigate } from "react-router-dom"
 
+import "./Form.css"
+
 const CreateParty = () => {
   const [services, setServices] = useState([])
 
@@ -20,7 +22,7 @@ const CreateParty = () => {
 
 
   return (
-    <div className="Form-page">
+    <div className="form-page">
       <h2>Crie a sua proxima Festa</h2>
       <p>Defina o seu orçamento e escolha o serviço</p>
       <form >
@@ -46,13 +48,13 @@ const CreateParty = () => {
         </label>
         <div>
           <h2>Escolha os serviços</h2>
-          <div className="servicos-containet">
+          <div className="servicos-container">
             {services.length === 0 && <p>Carregando...</p>}
             {services.length > 0 && services.map((service) => (
               <div className="service" key={service._Id}>
                 <img src={service.image} alt={service.name} />
-                <p className="Service-name">{service.name}</p>
-                <p className="Service-name">R${service.price}</p>
+                <p className="service-name">{service.name}</p>
+                <p className="service-price">R${service.price}</p>
                 <div className="checkbox-container">
                   <input type="checkbox" value={service._Id} />
                   <p>Marque para solicitar</p>
