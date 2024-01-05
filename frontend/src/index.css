@@ -1,8 +1,8 @@
 * {
-  font-family: 'Lato';
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -25,23 +25,37 @@ p {
   color: #747990;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.checkbox-container {
+  display: flex;
+}
+
 .btn,
-.btn-secondary{
+.btn-secondary {
   background-color: #7703fc;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: 0.4s;
   cursor: pointer;
-  display: block;
 }
 
-.btn:hover{
+.btn:hover {
   opacity: 0.8;
 }
 
-.btn-secondary{
-  background-color: #FFF;
-  color: #283258;
+.btn-secondary {
+  background-color: #fff;
+  color: #283252;
   border: 1px solid #cfcfcf;
 }
