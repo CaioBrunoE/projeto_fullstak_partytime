@@ -117,7 +117,7 @@ const CreateParty = () => {
         </label>
         <div>
           <h2>Escolha os serviços</h2>
-          <div className="servicos-container">
+          <div className="services-container">
             {services.length === 0 && <p>Carregando...</p>}
             {services.length > 0 && services.map((service) => (
               <div className="service" key={service._Id}>

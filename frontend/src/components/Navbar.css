@@ -10,3 +10,7 @@
     color: #7703fc;
     font-weight: bold;
 }
+
+#navbar ul{
+    align-items: center;
+}
